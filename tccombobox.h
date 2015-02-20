@@ -1,6 +1,7 @@
 #ifndef TCCOMBOBOX_H
 #define TCCOMBOBOX_H
 
+#include <QComboBox>
 
 class TCComboBox : public QComboBox
 {

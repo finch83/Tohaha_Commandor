@@ -12,5 +12,5 @@ TCFSModel::~TCFSModel()
 
 void TCFSModel::addFirstRow()
 {
-//    this->insertRow(0);
+    this->insertRow(0);
 }
