@@ -1,7 +1,6 @@
 #include "tcsideframe.h"
 
 #include <QGridLayout>
-#include <QComboBox>
 #include <QDebug>
 
 #include <QDir>
@@ -10,7 +9,7 @@
 TCSideFrame::TCSideFrame(QWidget *parent) :
     QFrame(parent)
 {
-    m_pCmbBoxVolumes                = new QComboBox;
+    m_pCmbBoxVolumes                = new TCComboBox;
     m_pTblView                      = new TCTableWgt;
     m_pFSModel                      = new TCFSModel;
 
@@ -30,10 +29,8 @@ TCSideFrame::TCSideFrame(QWidget *parent) :
     pGridLayout->addWidget(m_pCmbBoxVolumes, 0, 0, 1, 3);
     pGridLayout->addWidget(m_pTblView, 1, 0, 15, 15);
 
-//    connect(m_pCmbBoxVolumes, SIGNAL(currentIndexChanged(QString)),
-//            m_pTblView, SLOT(setRootIndex(QModelIndex)));
+    connect(m_pCmbBoxVolumes, SIGNAL(sendModelIndex(QModelIndex)),
+            m_pTblView, SLOT(setRootIndex(QModelIndex)));
 
     setLayout(pGridLayout);
-//    show();
-
 }

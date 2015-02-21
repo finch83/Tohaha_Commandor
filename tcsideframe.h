@@ -4,9 +4,9 @@
 #include <QFrame>
 
 #include "tctablewgt.h"
+#include "tccombobox.h"
 #include "tcfsmodel.h"
 
-class QComboBox;
 
 class TCSideFrame : public QFrame
 {
@@ -15,7 +15,7 @@ public:
     explicit TCSideFrame(QWidget *parent = 0);
 
 private:
-    QComboBox*              m_pCmbBoxVolumes;
+    TCComboBox*             m_pCmbBoxVolumes;
     TCTableWgt*             m_pTblView;
     TCFSModel*              m_pFSModel;
 
